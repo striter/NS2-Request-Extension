@@ -1,0 +1,16 @@
+name        = "[CN] Voices/Request Extension"
+source_dir  = "source"
+output_dir  = "output"
+description = [=[往请求界面里加了些怪东西
+
+Add something for request menu & voices.
+X to check these horrible things.
+
+-console commands for key binding
+*disease
+*oxg
+*noise]=]
+image       = "preview.jpg"
+tag_modtype = ""
+tag_support = ""
+publish_id = 2733077552
