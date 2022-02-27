@@ -34,6 +34,7 @@ local function GetIsRequestMenuKey(key)
     return key == InputKey.X
 end
 
+
 local gSendAvailableTime = 0
 local kDefaultSendInterval = 2.0
 local function GetCanSendRequest(id)
@@ -112,7 +113,7 @@ local function CreateEjectButton(self, teamType)
 
 end
 
-local function CreateConcedeButton(self, teamType)
+local function CreateBottomButton(self, teamType)
 
     local extraPadding = #self.menuButtons > 8 and kConcedeButtonPadding or 0
     local background = GetGUIManager():CreateGraphicItem()
@@ -120,6 +121,7 @@ local function CreateConcedeButton(self, teamType)
     background:SetTexture(ConditionalValue(self.cachedHudDetail == kHUDMode.Minimal, "ui/transparent.dds", kBackgroundTexture[teamType]))
     background:SetAnchor(GUIItem.Middle, GUIItem.Bottom)
     background:SetPosition(Vector(-kBackgroundSize.x * .5, kPadding+extraPadding, 0))
+    background:SetIsVisible(false)
     
     local concedeText = GetGUIManager():CreateTextItem()
     concedeText:SetTextAlignmentX(GUIItem.Align_Center)
@@ -129,7 +131,6 @@ local function CreateConcedeButton(self, teamType)
     GUIMakeFontScale(concedeText)
     concedeText:SetAnchor(GUIItem.Middle, GUIItem.Center)
     concedeText:SetText(Locale.ResolveString("VOTE_CONCEDE"))
-    
     self.background:AddChild(background)
     background:AddChild(concedeText)
     
@@ -318,8 +319,20 @@ function GUIRequestMenu:Initialize()
         end
     end
 
-    self.ejectCommButton = CreateEjectButton(self, self.teamType)
-    self.voteConcedeButton = CreateConcedeButton(self, self.teamType)
+    -------------
+    local timer = GetGUIManager():CreateTextItem()
+    timer:SetTextAlignmentX(GUIItem.Align_Center)
+    timer:SetTextAlignmentY(GUIItem.Align_Center)
+    timer:SetFontName(kFontName)
+    timer:SetScale(scaleVector)
+    GUIMakeFontScale(timer)
+    timer:SetAnchor(GUIItem.Middle, GUIItem.Center)
+    self.background:AddChild(timer)
+    self.timerText = timer
+    --------------
+    
+    self.ejectCommButton = CreateEjectButton(self, self.teamType )
+    self.bottomButton = CreateBottomButton(self, self.teamType)
 
     local leftMenu = GetRequestMenu(LEFT_MENU, self.playerClass ,self.teamType)
     local numLeftEntries = #leftMenu
@@ -371,7 +384,8 @@ function GUIRequestMenu:Uninitialize()
     
     self.background = nil
     self.ejectCommButton = nil
-    self.voteConcedeButton = nil
+    self.bottomButton = nil
+    self.timerText = nil
     self.menuButtons = {}
     
     HelpScreen_RemoveObserver(self)
@@ -434,7 +448,17 @@ function GUIRequestMenu:Update(deltaTime)   --TODO Add Taunt throttle
     
         local commanderName = PlayerUI_GetCommanderName()
         self.ejectCommButton.Background:SetIsVisible( commanderName ~= nil )
-        self.voteConcedeButton.Background:SetIsVisible( VotingConcedeVoteAllowed() )
+        self.bottomButton.Background:SetIsVisible(VotingConcedeVoteAllowed() )
+        -------
+
+        local timeNow = Shared.GetTime() 
+        local timeText=""
+        if timeNow < gSendAvailableTime then
+            timeText = string.format("%.1f", gSendAvailableTime - timeNow)
+        end
+        self.timerText:SetText(timeText)
+
+        ----------
         if commanderName then
             local text = string.format("%s %s", Locale.ResolveString("EJECT"), string.UTF8Upper(commanderName))
             local textWidth = GUIScale(Vector(190, 48, 0))
@@ -463,8 +487,8 @@ function GUIRequestMenu:Update(deltaTime)   --TODO Add Taunt throttle
             self.selectedButton = self.ejectCommButton
         end
         
-        if self.voteConcedeButton.Background:GetIsVisible() and GUIItemContainsPoint(self.voteConcedeButton.Background, mouseX, mouseY) then
-            self.selectedButton = self.voteConcedeButton
+        if self.bottomButton.Background:GetIsVisible() and GUIItemContainsPoint(self.bottomButton.Background, mouseX, mouseY) then
+            self.selectedButton = self.bottomButton
         end
         
          for _,button in ipairs( self.menuButtons ) do
@@ -523,7 +547,7 @@ function GUIRequestMenu:Update(deltaTime)   --TODO Add Taunt throttle
         -- Deselect all buttons
         local unselectedButtonTexture = ConditionalValue(minimal, "ui/transparent.dds", kBackgroundTexture[self.teamType])
         self.ejectCommButton.Background:SetTexture(unselectedButtonTexture)
-        self.voteConcedeButton.Background:SetTexture(unselectedButtonTexture)
+        self.bottomButton.Background:SetTexture(unselectedButtonTexture)
 
         for _,button in ipairs( self.menuButtons ) do
 
@@ -554,10 +578,10 @@ function GUIRequestMenu:Update(deltaTime)   --TODO Add Taunt throttle
             self.ejectCommButton.CommanderName:SetColor(defaultColor)
         end
 
-        if self.selectedButton == self.voteConcedeButton then
-            self.voteConcedeButton.ConcedeText:SetColor(highlightColor)
+        if self.selectedButton == self.bottomButton then
+            self.bottomButton.ConcedeText:SetColor(highlightColor)
         else
-            self.voteConcedeButton.ConcedeText:SetColor(defaultColor)
+            self.bottomButton.ConcedeText:SetColor(defaultColor)
         end
 
         for _, button in ipairs(self.menuButtons) do
@@ -573,7 +597,7 @@ function GUIRequestMenu:Update(deltaTime)   --TODO Add Taunt throttle
             self.cachedHudDetail = newHudDetail
             self.background:SetTexture(ConditionalValue(minimal, "ui/transparent.dds", kMenuTexture[self.teamType]))
             self.ejectCommButton.Background:SetTexture(ConditionalValue(self.cachedHudDetail == kHUDMode.Minimal, "ui/transparent.dds", kBackgroundTexture[self.teamType]))
-            self.voteConcedeButton.Background:SetTexture(ConditionalValue(self.cachedHudDetail == kHUDMode.Minimal, "ui/transparent.dds", kBackgroundTexture[self.teamType]))
+            self.bottomButton.Background:SetTexture(ConditionalValue(self.cachedHudDetail == kHUDMode.Minimal, "ui/transparent.dds", kBackgroundTexture[self.teamType]))
         end
     
         if not PlayerUI_GetCanDisplayRequestMenu() then
@@ -619,7 +643,7 @@ function GUIRequestMenu:SendKeyEvent(key, down)
                 end
                 hitButton = true
                 
-            elseif self.selectedButton == self.voteConcedeButton and self.voteConcedeButton.Background:GetIsVisible() then
+            elseif self.selectedButton == self.bottomButton and self.bottomButton.Background:GetIsVisible() then
                 
                 if OnConcedeButtonClicked() then
                     OnClick_RequestMenu()
@@ -741,5 +765,29 @@ Event.Hook("Console_kthulu", OnKTHULU)
 local function OnOXG()
     SendRequest(kVoiceId.OttoOXG)
 end
-    
 Event.Hook("Console_oxg", OnOXG)
+
+local function OnJCHZ()
+    SendRequest(kVoiceId.OttoJCHZ)
+end
+Event.Hook("Console_jchz",OnJCHZ)
+
+-- local function OnS6Legend()
+--     SendRequest(kVoiceId.XuanStory)
+-- end
+-- Event.Hook("Console_s6legend",OnS6Legend)
+
+-- local function OnLiberity()
+--     SendRequest(kVoiceId.Liberity)
+-- end
+-- Event.Hook("Console_liberity",OnLiberity)
+
+-- local function OnDuiDuiDui()
+--     SendRequest(kVoiceId.DuiDuiDui)
+-- end
+-- Event.Hook("Console_duiduidui",OnDuiDuiDui)
+
+local function OnHitme()
+    SendRequest(kVoiceId.Hitme)
+end
+Event.Hook("Console_hitme",OnHitme)

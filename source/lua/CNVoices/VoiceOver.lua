@@ -42,6 +42,9 @@ kVoiceId = enum
     'XuanRea',
     'XuanAha',
     'XuanStory',
+    'Liberity',
+    'DuiDuiDui',
+    'Hitme',
 })
 
 local kAlienTauntSounds =
@@ -197,7 +200,10 @@ local kSoundData =
     [kVoiceId.XuanOhoo] = { Sound = "sound/CNTaunts.fev/Xuan/Ohoo", Description = "REQUEST_XUAN_OHOO",  Interval = 0.75, AlertTechId = kTechId.None },  
     [kVoiceId.XuanRea] = { Sound = "sound/CNTaunts.fev/Xuan/Rea", Description = "REQUEST_XUAN_REA", Interval = 2.5,  AlertTechId = kTechId.None },  
     [kVoiceId.XuanAha] = { Sound = "sound/CNTaunts.fev/Xuan/Aha", Description = "REQUEST_XUAN_AHA",  Interval = 1.5, AlertTechId = kTechId.None },  
-    [kVoiceId.XuanStory] = { Sound = "sound/CNTaunts.fev/Xuan/Story", Description = "REQUEST_XUAN_STORY",  Interval = 74, AlertTechId = kTechId.None },  
+    [kVoiceId.XuanStory] = { Sound = "sound/CNTaunts.fev/Xuan/Story", Description = "REQUEST_XUAN_STORY",  Interval = 73, AlertTechId = kTechId.None },  
+    [kVoiceId.Liberity] = { Sound = "sound/CNTaunts.fev/CUSTOM/Liberity", Description = "REQUEST_LIBERITY",  Interval = 11, AlertTechId = kTechId.None },  
+    [kVoiceId.DuiDuiDui] = { Sound = "sound/CNTaunts.fev/CUSTOM/DuiDuiDui", Description = "REQUEST_DUIDUIDUI",  Interval = 31, AlertTechId = kTechId.None },  
+    [kVoiceId.Hitme] = { Sound = "sound/CNTaunts.fev/CUSTOM/Hitme", Description = "REQUEST_HITME",  Interval = 8, AlertTechId = kTechId.None },  
 }
 
 
@@ -314,8 +320,8 @@ local kGorgeMenu =
 
 local kSpectatorMenu =
 {
-    [LEFT_MENU] = {kVoiceId.OttoOXG, kVoiceId.XuanOhoo, kVoiceId.XuanAha,kVoiceId.XuanWoof,kVoiceId.XuanRea,kVoiceId.OttoDDD},
-    [RIGHT_MENU] = {  kVoiceId.Disease,kVoiceId.OttoKTHULU,kVoiceId.OttoJB,kVoiceId.OttoJCHZ,kVoiceId.XuanStory, kVoiceId.OttoStory }
+    [LEFT_MENU] = {kVoiceId.Disease,kVoiceId.OttoOXG, kVoiceId.XuanOhoo, kVoiceId.XuanAha,kVoiceId.XuanWoof,kVoiceId.XuanRea,kVoiceId.OttoKTHULU},
+    [RIGHT_MENU] = {  kVoiceId.OttoJB,kVoiceId.OttoJCHZ,kVoiceId.XuanStory, kVoiceId.OttoStory,kVoiceId.Liberity,kVoiceId.DuiDuiDui }
 }
 
 local kRequestMenus = 
