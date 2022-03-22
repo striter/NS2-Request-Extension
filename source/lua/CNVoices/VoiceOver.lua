@@ -44,6 +44,8 @@ kVoiceId = enum
     'XuanStory',
     'Liberity',
     'DuiDuiDui',
+    'CZHL',
+    'Summer',
     'Hitme',
 })
 
@@ -204,6 +206,8 @@ local kSoundData =
     [kVoiceId.Liberity] = { Sound = "sound/CNTaunts.fev/CUSTOM/Liberity", Description = "REQUEST_LIBERITY",  Interval = 11, AlertTechId = kTechId.None },  
     [kVoiceId.DuiDuiDui] = { Sound = "sound/CNTaunts.fev/CUSTOM/DuiDuiDui", Description = "REQUEST_DUIDUIDUI",  Interval = 31, AlertTechId = kTechId.None },  
     [kVoiceId.Hitme] = { Sound = "sound/CNTaunts.fev/CUSTOM/Hitme", Description = "REQUEST_HITME",  Interval = 8, AlertTechId = kTechId.None },  
+    [kVoiceId.CZHL] = { Sound = "sound/CNTaunts.fev/CUSTOM/CZHL", Description = "REQUEST_CZHL",  Interval = 14, AlertTechId = kTechId.None },  
+    [kVoiceId.Summer] = { Sound = "sound/CNTaunts.fev/CUSTOM/Summer", Description = "REQUEST_SUMMER",  Interval = 46, AlertTechId = kTechId.None },  
 }
 
 
@@ -320,8 +324,8 @@ local kGorgeMenu =
 
 local kSpectatorMenu =
 {
-    [LEFT_MENU] = {kVoiceId.Disease,kVoiceId.OttoOXG, kVoiceId.XuanOhoo, kVoiceId.XuanAha,kVoiceId.XuanWoof,kVoiceId.XuanRea,kVoiceId.OttoKTHULU},
-    [RIGHT_MENU] = {  kVoiceId.OttoJB,kVoiceId.OttoJCHZ,kVoiceId.XuanStory, kVoiceId.OttoStory,kVoiceId.Liberity,kVoiceId.DuiDuiDui }
+    [LEFT_MENU] = {kVoiceId.Disease,kVoiceId.OttoOXG, kVoiceId.XuanOhoo,kVoiceId.OttoJCHZ,kVoiceId.XuanWoof,kVoiceId.OttoJB,kVoiceId.OttoKTHULU},
+    [RIGHT_MENU] = {kVoiceId.Summer,kVoiceId.CZHL,kVoiceId.XuanStory, kVoiceId.OttoStory,kVoiceId.Liberity,kVoiceId.DuiDuiDui}
 }
 
 local kRequestMenus = 

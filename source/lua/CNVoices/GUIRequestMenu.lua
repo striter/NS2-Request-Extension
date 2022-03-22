@@ -34,6 +34,7 @@ local function GetIsRequestMenuKey(key)
     return key == InputKey.X
 end
 
+local gIsConcedeButton = false
 
 local gSendAvailableTime = 0
 local kDefaultSendInterval = 2.0
@@ -208,15 +209,20 @@ local function OnEjectCommanderClicked()
 end
 
 local function OnConcedeButtonClicked()
+--------
+    if gIsConcedeButton then
+        if GetCanSendRequest(kVoiceId.VoteConcede) then
 
-    if GetCanSendRequest(kVoiceId.VoteConcede) then
-
-        Client.SendNetworkMessage("VoiceMessage", BuildVoiceMessage(kVoiceId.VoteConcede), true)
-        gSendAvailableTime = Shared.GetTime() + kDefaultSendInterval
+            Client.SendNetworkMessage("VoiceMessage", BuildVoiceMessage(kVoiceId.VoteConcede), true)
+            gSendAvailableTime = Shared.GetTime() + kDefaultSendInterval
+            return true
+            
+        end
+    else
+        gMuteCustomVoices = not gMuteCustomVoices
         return true
-        
     end
-    
+---------
     return false
 
 end
@@ -320,6 +326,8 @@ function GUIRequestMenu:Initialize()
     end
 
     -------------
+    gIsConcedeButton = self.teamType ~= kNeutralTeamType
+
     local timer = GetGUIManager():CreateTextItem()
     timer:SetTextAlignmentX(GUIItem.Align_Center)
     timer:SetTextAlignmentY(GUIItem.Align_Center)
@@ -448,8 +456,17 @@ function GUIRequestMenu:Update(deltaTime)   --TODO Add Taunt throttle
     
         local commanderName = PlayerUI_GetCommanderName()
         self.ejectCommButton.Background:SetIsVisible( commanderName ~= nil )
-        self.bottomButton.Background:SetIsVisible(VotingConcedeVoteAllowed() )
         -------
+        if gIsConcedeButton then
+            self.bottomButton.Background:SetIsVisible(VotingConcedeVoteAllowed() )
+        else 
+            local title = "MUTE_REQUEST_CUSTOM"
+            if gMuteCustomVoices then
+                title = "UNMUTE_REQUEST_CUSTOM"
+            end
+            self.bottomButton.Background:SetIsVisible(true )
+            self.bottomButton.ConcedeText:SetText(Locale.ResolveString(title))
+        end
 
         local timeNow = Shared.GetTime() 
         local timeText=""
@@ -772,6 +789,10 @@ local function OnJCHZ()
 end
 Event.Hook("Console_jchz",OnJCHZ)
 
+local function OnWoof()
+    SendRequest(kVoiceId.XuanWoof)
+end
+Event.Hook("Console_woof",OnWoof)
 -- local function OnS6Legend()
 --     SendRequest(kVoiceId.XuanStory)
 -- end
@@ -791,3 +812,8 @@ local function OnHitme()
     SendRequest(kVoiceId.Hitme)
 end
 Event.Hook("Console_hitme",OnHitme)
+
+local function OnRandomDisease()
+    SendRequest(math.random(kVoiceId.Disease,kVoiceId.Hitme))
+end
+Event.Hook("Console_randomdisease",OnRandomDisease)

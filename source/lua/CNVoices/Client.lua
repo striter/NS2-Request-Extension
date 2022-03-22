@@ -15,4 +15,21 @@ if kTranslateMessage then
     kTranslateMessage["REQUEST_XUAN_STORY"]="《第一个王者》"
     kTranslateMessage["REQUEST_DUIDUIDUI"]="《生活的态度》"
     kTranslateMessage["REQUEST_LIBERITY"]="《独立宣言》"
+    kTranslateMessage["REQUEST_SUMMER"]="《盛夏》"
+    kTranslateMessage["REQUEST_CZHL"]="《沈阳大街》"
+    
+    kTranslateMessage["MUTE_REQUEST_CUSTOM"]="太吵请点我"
+    kTranslateMessage["UNMUTE_REQUEST_CUSTOM"]="太安静请点我"
+    
+    kTranslateMessage["VOTE_DISEASE"]="全员恶疾"
+    kTranslateMessage["VOTE_DISEASE_QUERY1"]="一把米诺"
+    kTranslateMessage["VOTE_DISEASE_QUERY2"]="奥利安费"
+    kTranslateMessage["VOTE_DISEASE_QUERY3"]="下面就要打开我的文本框了"
+    kTranslateMessage["VOTE_DISEASE_QUERY4"]="欧系给"
+    kTranslateMessage["VOTE_DISEASE_QUERY5"]="欧内的手 好汉"
+    kTranslateMessage["VOTE_DISEASE_QUERY6"]="希望你对你的人生也是这个态度"
+    kTranslateMessage["VOTE_DISEASE_QUERY7"]="草 走 忽略"
+    kTranslateMessage["VOTE_DISEASE_QUERY8"]="惹啊啊啊啊啊啊啊"
+    kTranslateMessage["VOTE_DISEASE_QUERY9"]="啊对对对"
+    kTranslateMessage["VOTE_DISEASE_QUERY9"]="久菜合子 贼积吧好吃"
 end
