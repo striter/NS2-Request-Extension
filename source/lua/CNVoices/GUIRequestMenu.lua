@@ -341,12 +341,13 @@ function GUIRequestMenu:Initialize()
     
     self.ejectCommButton = CreateEjectButton(self, self.teamType )
     self.bottomButton = CreateBottomButton(self, self.teamType)
-
-    local leftMenu = GetRequestMenu(LEFT_MENU, self.playerClass ,self.teamType)
+------------
+    local leftMenu = GetRequestMenuTeam(LEFT_MENU, self.playerClass ,self.teamType)
     local numLeftEntries = #leftMenu
-    local rightMenu = GetRequestMenu(RIGHT_MENU, self.playerClass,self.teamType)
+    local rightMenu = GetRequestMenuTeam(RIGHT_MENU, self.playerClass,self.teamType)
     local numRightEntries = #rightMenu
-    
+-----------
+
     for i = 1, numLeftEntries do
     
         if i > kMaxRequestsPerSide then
@@ -749,50 +750,21 @@ end
     
 Event.Hook("Console_requestweld", OnCommandRequestWeld)
 
-local function OnDisease()
-    SendRequest(kVoiceId.Disease)
-end
-    
-Event.Hook("Console_disease", OnDisease )
+Event.Hook("Console_disease", function() SendRequest(kVoiceId.Disease) end )
+Event.Hook("Console_ohoo", function() SendRequest(kVoiceId.XuanOhoo) end)
+Event.Hook("Console_rea", function() SendRequest(kVoiceId.XuanRea) end)
+Event.Hook("Console_aha", function() SendRequest(kVoiceId.XuanAha) end )
+Event.Hook("Console_kthulu", function() SendRequest(kVoiceId.OttoKTHULU) end)
+Event.Hook("Console_oxg", function() SendRequest(kVoiceId.OttoOXG)  end)
+Event.Hook("Console_jchz",function() SendRequest(kVoiceId.OttoJCHZ) end)
+Event.Hook("Console_woof",function() SendRequest(kVoiceId.XuanWoof) end)
+Event.Hook("Console_hitme",function() SendRequest(kVoiceId.Hitme) end)
+Event.Hook("Console_wu",function() SendRequest(kVoiceId.Wu) end)
+Event.Hook("Console_ah",function() SendRequest(kVoiceId.Ah) end)
+Event.Hook("Console_slap",function() SendRequest(kVoiceId.Slap) end)
+Event.Hook("Console_aniki",function() SendRequest(kVoiceId.AnikiSpeak) end)
+Event.Hook("Console_randomdisease",function() SendRequest(math.random(kVoiceId.Disease,kVoiceId.AnikiSpeak)) end )
 
-local function OnOhoo()
-    SendRequest(kVoiceId.XuanOhoo)
-end
-    
-Event.Hook("Console_ohoo", OnOhoo)
-
-local function OnRea()
-    SendRequest(kVoiceId.XuanRea)
-end
-    
-Event.Hook("Console_rea", OnRea)
-
-local function OnAha()
-    SendRequest(kVoiceId.XuanAha)
-end
-    
-Event.Hook("Console_aha", OnAha)
-
-local function OnKTHULU()
-    SendRequest(kVoiceId.OttoKTHULU)
-end
-    
-Event.Hook("Console_kthulu", OnKTHULU)
-
-local function OnOXG()
-    SendRequest(kVoiceId.OttoOXG)
-end
-Event.Hook("Console_oxg", OnOXG)
-
-local function OnJCHZ()
-    SendRequest(kVoiceId.OttoJCHZ)
-end
-Event.Hook("Console_jchz",OnJCHZ)
-
-local function OnWoof()
-    SendRequest(kVoiceId.XuanWoof)
-end
-Event.Hook("Console_woof",OnWoof)
 -- local function OnS6Legend()
 --     SendRequest(kVoiceId.XuanStory)
 -- end
@@ -808,12 +780,4 @@ Event.Hook("Console_woof",OnWoof)
 -- end
 -- Event.Hook("Console_duiduidui",OnDuiDuiDui)
 
-local function OnHitme()
-    SendRequest(kVoiceId.Hitme)
-end
-Event.Hook("Console_hitme",OnHitme)
 
-local function OnRandomDisease()
-    SendRequest(math.random(kVoiceId.Disease,kVoiceId.Hitme))
-end
-Event.Hook("Console_randomdisease",OnRandomDisease)

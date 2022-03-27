@@ -17,6 +17,12 @@ if kTranslateMessage then
     kTranslateMessage["REQUEST_LIBERITY"]="《独立宣言》"
     kTranslateMessage["REQUEST_SUMMER"]="《盛夏》"
     kTranslateMessage["REQUEST_CZHL"]="《沈阳大街》"
+    kTranslateMessage["REQUEST_LOCKERROOM"]="《更衣室》"
+
+    kTranslateMessage["REQUEST_WU"]="芜"
+    kTranslateMessage["REQUEST_AH"]="啊?"
+    kTranslateMessage["REQUEST_SLAP"]="尻击"
+    kTranslateMessage["REQUEST_ANIKI"]="本格"
     
     kTranslateMessage["MUTE_REQUEST_CUSTOM"]="太吵请点我"
     kTranslateMessage["UNMUTE_REQUEST_CUSTOM"]="太安静请点我"
@@ -32,4 +38,5 @@ if kTranslateMessage then
     kTranslateMessage["VOTE_DISEASE_QUERY8"]="惹啊啊啊啊啊啊啊"
     kTranslateMessage["VOTE_DISEASE_QUERY9"]="啊对对对"
     kTranslateMessage["VOTE_DISEASE_QUERY9"]="久菜合子 贼积吧好吃"
+    kTranslateMessage["VOTE_DISEASE_QUERY10"]="Deep Dark Fantasy"
 end
