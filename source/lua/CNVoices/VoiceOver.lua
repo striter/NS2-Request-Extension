@@ -47,10 +47,10 @@ local kAdditionalSoundData =
     [kVoiceId.Summer] = { Sound = "sound/CNTaunts.fev/CUSTOM/Summer", Description = "REQUEST_SUMMER",  Interval = 46, AlertTechId = kTechId.None },  
 
     [kVoiceId.LockerRoom] = { Sound = "sound/CNTaunts.fev/CUSTOM/LockerRoom", Description = "REQUEST_LOCKERROOM",  Interval = 50, AlertTechId = kTechId.None },  
-    [kVoiceId.Ah] = { Sound = "sound/CNTaunts.fev/Aniki/ah", Description = "REQUEST_AH",  Interval = 0.6, AlertTechId = kTechId.None },  
-    [kVoiceId.Wu] = { Sound = "sound/CNTaunts.fev/Aniki/wu", Description = "REQUEST_WU",  Interval = 0.6, AlertTechId = kTechId.None },  
-    [kVoiceId.Slap] = { Sound = "sound/CNTaunts.fev/Aniki/slap", Description = "REQUEST_SLAP",  Interval = 0.6, AlertTechId = kTechId.None },  
-    [kVoiceId.AnikiSpeak] = { Sound = "sound/CNTaunts.fev/Aniki/speak", Description = "REQUEST_ANIKI",  Interval = 1.75, AlertTechId = kTechId.None },  
+    [kVoiceId.Ah] = { Sound = "sound/CNTaunts.fev/Aniki/ah", Description = "REQUEST_AH",  Interval = 0.75, AlertTechId = kTechId.None },  
+    [kVoiceId.Wu] = { Sound = "sound/CNTaunts.fev/Aniki/wu", Description = "REQUEST_WU",  Interval = 0.75, AlertTechId = kTechId.None },  
+    [kVoiceId.Slap] = { Sound = "sound/CNTaunts.fev/Aniki/slap", Description = "REQUEST_SLAP",  Interval = 0.75, AlertTechId = kTechId.None },  
+    [kVoiceId.AnikiSpeak] = { Sound = "sound/CNTaunts.fev/Aniki/speak", Description = "REQUEST_ANIKI",  Interval = 2, AlertTechId = kTechId.None },  
 }
 
 for _, data in pairs(kAdditionalSoundData) do
