@@ -9,7 +9,7 @@ if Client then
     local function CustomVoiceMute(self)
         if not self.customVoice then return end
         if self.playing and self.soundEffectInstance then        
-            self.soundEffectInstance:SetVolume(gMuteCustomVoices and 0 or self.volume)
+            self.soundEffectInstance:SetVolume(gMuteCustomVoices and 0 or 1)
         end
     end
 

@@ -19,7 +19,7 @@ if kTranslateMessage then
     kTranslateMessage["REQUEST_CZHL"]="《沈阳大街》"
     kTranslateMessage["REQUEST_LOCKERROOM"]="《更衣室》"
 
-    kTranslateMessage["REQUEST_WU"]="芜"
+    kTranslateMessage["REQUEST_WU"]="芜?"
     kTranslateMessage["REQUEST_AH"]="啊?"
     kTranslateMessage["REQUEST_SLAP"]="尻击"
     kTranslateMessage["REQUEST_ANIKI"]="本格"
