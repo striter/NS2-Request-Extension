@@ -3,6 +3,7 @@ ModLoader.SetupFileHook("lua/GUIRequestMenu.lua", "lua/CNVoices/GUIRequestMenu.l
 ModLoader.SetupFileHook("lua/SoundEffect.lua", "lua/CNVoices/SoundEffect.lua", "post")
 ModLoader.SetupFileHook("lua/Voting.lua", "lua/CNVoices/Voting.lua", "post")
 ModLoader.SetupFileHook("lua/Shared.lua", "lua/CNVoices/Shared.lua", "post")
+ModLoader.SetupFileHook("lua/NetworkMessages_Server.lua", "lua/CNVoices/NetworkMessages_Server.lua", "post")
 
 if AddHintModPanel then
     local panelMaterial = PrecacheAsset("materials/CNCommunityVoices/Banner.material")

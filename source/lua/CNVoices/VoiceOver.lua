@@ -57,13 +57,8 @@ for _, data in pairs(kAdditionalSoundData) do
     PrecacheAsset(data.Sound)
 end
 
-local baseGetVoiceSoundData = GetVoiceSoundData
-function GetVoiceSoundData(voiceId)
-    local addtionalData =kAdditionalSoundData[voiceId]
-    if addtionalData then
-        return addtionalData
-    end
-    return baseGetVoiceSoundData(voiceId)
+function GetAdditionalVoiceSoundData(voiceId)
+    return kAdditionalSoundData[voiceId]
 end
 
 local kSpectatorMenu =

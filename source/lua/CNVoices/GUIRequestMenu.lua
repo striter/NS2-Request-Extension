@@ -232,12 +232,14 @@ local function SendRequest(voiceId)
     if GetCanSendRequest(voiceId) and not MainMenu_GetIsOpened() then
         Client.SendNetworkMessage("VoiceMessage", BuildVoiceMessage(voiceId), true)
         local sendInterval = kDefaultSendInterval
-        local data=GetVoiceSoundData(voiceId)
+        
+---------
+        local data = GetAdditionalVoiceSoundData(voiceId) or GetVoiceSoundData(voiceId)
         if data.Interval then
             sendInterval = data.Interval
         end
-
         gSendAvailableTime = Shared.GetTime() + sendInterval
+--------
         return true
         
     end
