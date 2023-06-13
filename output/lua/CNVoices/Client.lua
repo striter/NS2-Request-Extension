@@ -23,6 +23,7 @@ if kLocales then
 
     kLocales["REQUEST_SCREAM"]="尖叫"
     kLocales["REQUEST_SCREAMLONG"]="毫无意义的尖叫"
+    kLocales["REQUEST_JESTER"]="崩溃"
     kLocales["REQUEST_WU"]="芜?"
     kLocales["REQUEST_AH"]="啊?"
     kLocales["REQUEST_SLAP"]="尻击"

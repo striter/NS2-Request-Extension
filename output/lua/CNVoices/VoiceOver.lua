@@ -23,6 +23,7 @@ debug.appendtoenum(kVoiceId,'LockerRoom')
 debug.appendtoenum(kVoiceId,'Willings')
 debug.appendtoenum(kVoiceId,'Scream')
 debug.appendtoenum(kVoiceId,'ScreamLong')
+debug.appendtoenum(kVoiceId,'Jester')
 debug.appendtoenum(kVoiceId,'Wu')
 debug.appendtoenum(kVoiceId,'Ah')
 debug.appendtoenum(kVoiceId,'Slap')
@@ -53,12 +54,13 @@ local kAdditionalSoundData =
     [kVoiceId.Willings] = { Sound = "sound/CNTaunts.fev/CUSTOM/Willings", Description = "REQUEST_WILLINGS",  Interval = 41, AlertTechId = kTechId.None },
     [kVoiceId.Scream] = { Sound = "sound/CNTaunts.fev/CUSTOM/Scream", Description = "REQUEST_SCREAM",  Interval = 0.5, AlertTechId = kTechId.None },
     [kVoiceId.ScreamLong] = { Sound = "sound/CNTaunts.fev/CUSTOM/ScreamLong", Description = "REQUEST_SCREAMLONG",  Interval = 1, AlertTechId = kTechId.None },
+    [kVoiceId.Jester] = { Sound = "sound/CNTaunts.fev/CUSTOM/Jester", Description = "REQUEST_JESTER",  Interval = 2.5, AlertTechId = kTechId.None },
 
     [kVoiceId.LockerRoom] = { Sound = "sound/CNTaunts.fev/Aniki/Wrestle", Description = "REQUEST_LOCKERROOM",  Interval = 50, AlertTechId = kTechId.None },  
     [kVoiceId.Ah] = { Sound = "sound/CNTaunts.fev/Aniki/ah", Description = "REQUEST_AH",  Interval = 0.75, AlertTechId = kTechId.None },  
     [kVoiceId.Wu] = { Sound = "sound/CNTaunts.fev/Aniki/wu", Description = "REQUEST_WU",  Interval = 0.75, AlertTechId = kTechId.None },  
     [kVoiceId.Slap] = { Sound = "sound/CNTaunts.fev/Aniki/slap", Description = "REQUEST_SLAP",  Interval = 0.35, AlertTechId = kTechId.None },  
-    [kVoiceId.AnikiSpeak] = { Sound = "sound/CNTaunts.fev/Aniki/speak", Description = "REQUEST_ANIKI",  Interval = 2, AlertTechId = kTechId.None },  
+    [kVoiceId.AnikiSpeak] = { Sound = "sound/CNTaunts.fev/Aniki/speak", Description = "REQUEST_ANIKI",  Interval = 2, AlertTechId = kTechId.None },
 }
 
 for _, data in pairs(kAdditionalSoundData) do
