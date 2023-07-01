@@ -28,6 +28,7 @@ debug.appendtoenum(kVoiceId,'Wu')
 debug.appendtoenum(kVoiceId,'Ah')
 debug.appendtoenum(kVoiceId,'Slap')
 debug.appendtoenum(kVoiceId,'AnikiSpeak')
+debug.appendtoenum(kVoiceId,'WeirdWorld')
 
 local kAdditionalSoundData =
 {
@@ -55,7 +56,8 @@ local kAdditionalSoundData =
     [kVoiceId.Scream] = { Sound = "sound/CNTaunts.fev/CUSTOM/Scream", Description = "REQUEST_SCREAM",  Interval = 0.5, AlertTechId = kTechId.None },
     [kVoiceId.ScreamLong] = { Sound = "sound/CNTaunts.fev/CUSTOM/ScreamLong", Description = "REQUEST_SCREAMLONG",  Interval = 1, AlertTechId = kTechId.None },
     [kVoiceId.Jester] = { Sound = "sound/CNTaunts.fev/CUSTOM/Jester", Description = "REQUEST_JESTER",  Interval = 2.5, AlertTechId = kTechId.None },
-
+    
+    [kVoiceId.WeirdWorld] = { Sound = "sound/CNTaunts.fev/CUSTOM/WeirdWorld", Description = "REQUEST_WEIRDWORLD",  Interval = 93, AlertTechId = kTechId.None },
     [kVoiceId.LockerRoom] = { Sound = "sound/CNTaunts.fev/Aniki/Wrestle", Description = "REQUEST_LOCKERROOM",  Interval = 50, AlertTechId = kTechId.None },  
     [kVoiceId.Ah] = { Sound = "sound/CNTaunts.fev/Aniki/ah", Description = "REQUEST_AH",  Interval = 0.75, AlertTechId = kTechId.None },  
     [kVoiceId.Wu] = { Sound = "sound/CNTaunts.fev/Aniki/wu", Description = "REQUEST_WU",  Interval = 0.75, AlertTechId = kTechId.None },  

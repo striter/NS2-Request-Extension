@@ -19,6 +19,7 @@ if kLocales then
     kLocales["REQUEST_SUMMER"]="《盛夏》"
     kLocales["REQUEST_CZHL"]="《沈阳大街》"
     kLocales["REQUEST_LOCKERROOM"]="《更衣室》"
+    kLocales["REQUEST_WEIRDWORLD"]="《浮世離れ》"
     kLocales["REQUEST_WILLINGS"]="《今天给大家看点想看的东西》"
 
     kLocales["REQUEST_SCREAM"]="尖叫"

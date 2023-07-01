@@ -769,6 +769,7 @@ Event.Hook("Console_aniki",function() SendRequest(kVoiceId.AnikiSpeak) end)
 Event.Hook("Console_scream",function() SendRequest(kVoiceId.Scream) end)
 Event.Hook("Console_screamlong",function() SendRequest(kVoiceId.ScreamLong) end)
 Event.Hook("Console_jester",function() SendRequest(kVoiceId.Jester) end)
+Event.Hook("Console_weirdworld",function() SendRequest(kVoiceId.WeirdWorld) end)
 Event.Hook("Console_randomdisease",function() SendRequest(math.random(kVoiceId.Disease,kVoiceId.AnikiSpeak)) end )
 
 -- local function OnS6Legend()
