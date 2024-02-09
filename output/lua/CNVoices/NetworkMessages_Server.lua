@@ -3,7 +3,8 @@
 --- Created by StriteR1996.
 --- DateTime: 2023/2/6 2:37
 ---
-function CreateVoiceMessage(player, voiceId)  --FIXME bigmac (need to use enum)
+function CreateVoiceMessage(player, voiceId)
+    --FIXME bigmac (need to use enum)
     local client = player:GetClient()
 
     if client and player.OnTaunt and (voiceId == kVoiceId.MarineTaunt or voiceId == kVoiceId.AlienTaunt) then
@@ -11,12 +12,12 @@ function CreateVoiceMessage(player, voiceId)  --FIXME bigmac (need to use enum)
     end
 
     --  Respect special reinforced reward VO
-    if voiceId == kVoiceId.MarineTaunt and GetHasDLC( kShadowProductId, client ) then
+    if voiceId == kVoiceId.MarineTaunt and GetHasDLC(kShadowProductId, client) then
         voiceId = kVoiceId.MarineTauntExclusive
     end
-----------
+    ----------
     local soundData = GetAdditionalVoiceSoundData(voiceId) or GetVoiceSoundData(voiceId)
-------------
+    ------------
     if soundData then
 
         local soundName = soundData.Sound

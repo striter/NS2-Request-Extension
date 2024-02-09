@@ -7,5 +7,5 @@ ModLoader.SetupFileHook("lua/NetworkMessages_Server.lua", "lua/CNVoices/NetworkM
 
 if AddHintModPanel then
     local panelMaterial = PrecacheAsset("materials/CNCommunityVoices/Banner.material")
-    AddHintModPanel(panelMaterial, "https://docs.qq.com/doc/DUHZFaHNQdExQSlZs","OK 这就要打开我的文本框了")
+    AddHintModPanel(panelMaterial, "https://docs.qq.com/doc/DUHZFaHNQdExQSlZs", "OK 这就要打开我的文本框了")
 end
