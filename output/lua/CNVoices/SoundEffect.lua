@@ -1,7 +1,9 @@
 if Client then
     gMuteCustomVoices = false
 
+    local baseOnInitialized = SoundEffect.OnInitialized
     function SoundEffect:OnInitialized()
+        baseOnInitialized(self)
         local assetName = Shared.GetSoundName(self.assetIndex)
         self.customVoice = string.find(assetName, "CNTaunts.fev") ~= nil
     end
@@ -11,7 +13,9 @@ if Client then
             return
         end
         if self.playing and self.soundEffectInstance then
-            self.soundEffectInstance:SetVolume(gMuteCustomVoices and 0 or 1)
+            local volume = OptionsDialogUI_GetSoundVolume() / 100
+            volume = volume * (gMuteCustomVoices and 0 or 1)
+            self.soundEffectInstance:SetVolume(volume)
         end
     end
 
