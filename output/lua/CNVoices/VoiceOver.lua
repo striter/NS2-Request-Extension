@@ -27,7 +27,11 @@ debug.appendtoenum(kVoiceId, 'Wu')
 debug.appendtoenum(kVoiceId, 'Ah')
 debug.appendtoenum(kVoiceId, 'Slap')
 debug.appendtoenum(kVoiceId, 'AnikiSpeak')
-debug.appendtoenum(kVoiceId,'djdl')
+debug.appendtoenum(kVoiceId, 'djdl')
+debug.appendtoenum(kVoiceId, 'Pyro')
+debug.appendtoenum(kVoiceId, 'PyroLaugh')
+debug.appendtoenum(kVoiceId, 'Aatrox')
+debug.appendtoenum(kVoiceId, 'AatroxLaugh')
 
 local kAdditionalSoundData = {
     [kVoiceId.Disease] = { Sound = "sound/CNTaunts.fev/ma/Laugh", Description = "REQUEST_DISEASE", Interval = 2, AlertTechId = kTechId.None },
@@ -59,8 +63,13 @@ local kAdditionalSoundData = {
     [kVoiceId.LockerRoom] = { Sound = "sound/CNTaunts.fev/Aniki/Wrestle", Description = "REQUEST_LOCKERROOM", Interval = 50, AlertTechId = kTechId.None },
     [kVoiceId.Ah] = { Sound = "sound/CNTaunts.fev/Aniki/ah", Description = "REQUEST_AH", Interval = 0.75, AlertTechId = kTechId.None },
     [kVoiceId.Wu] = { Sound = "sound/CNTaunts.fev/Aniki/wu", Description = "REQUEST_WU", Interval = 0.75, AlertTechId = kTechId.None },
-    [kVoiceId.Slap] = { Sound = "sound/CNTaunts.fev/Aniki/slap", Description = "REQUEST_SLAP", Interval = 0.35, AlertTechId = kTechId.None },
-    [kVoiceId.AnikiSpeak] = { Sound = "sound/CNTaunts.fev/Aniki/speak", Description = "REQUEST_ANIKI", Interval = 2, AlertTechId = kTechId.None },
+    [kVoiceId.Slap] = { Sound = "sound/CNTaunts.fev/Aniki/slap", Description = "尻击", Interval = 0.35, AlertTechId = kTechId.None },
+    [kVoiceId.AnikiSpeak] = { Sound = "sound/CNTaunts.fev/Aniki/speak", Description = "本格", Interval = 2, AlertTechId = kTechId.None },
+
+    [kVoiceId.Pyro] = { Sound = "sound/CNTaunts.fev/CUSTOM/Pyro", Description = "Pyro", Interval = 2, AlertTechId = kTechId.None },
+    [kVoiceId.PyroLaugh] = { Sound = "sound/CNTaunts.fev/CUSTOM/PyroLaugh", Description = "Pyro [2]", Interval = 1.25, AlertTechId = kTechId.None },
+    [kVoiceId.Aatrox] = { Sound = "sound/CNTaunts.fev/CUSTOM/Aatrox", Description = "亚托克斯", Interval = 2, AlertTechId = kTechId.None },
+    [kVoiceId.AatroxLaugh] = { Sound = "sound/CNTaunts.fev/CUSTOM/AatroxLaugh", Description = "亚托克斯 [2]", Interval = 1.25, AlertTechId = kTechId.None },
 }
 
 for _, data in pairs(kAdditionalSoundData) do
@@ -72,7 +81,7 @@ function GetAdditionalVoiceSoundData(voiceId)
 end
 
 local kSpectatorMenu = {
-    [LEFT_MENU] = { kVoiceId.Disease, kVoiceId.OttoOXG, kVoiceId.Slap, kVoiceId.Scream, kVoiceId.Ah, kVoiceId.Wu },
+    [LEFT_MENU] = { kVoiceId.Disease, kVoiceId.Aatrox, kVoiceId.AatroxLaugh, kVoiceId.ScreamLong, kVoiceId.Pyro, kVoiceId.PyroLaugh },
     [RIGHT_MENU] = { kVoiceId.djdl, kVoiceId.LockerRoom, kVoiceId.XuanStory, kVoiceId.OttoStory, kVoiceId.Liberity, kVoiceId.Willings }
 }
 

@@ -6261,7 +6261,7 @@
 <car_rpmsmooth>0.075</car_rpmsmooth>
 <car_loadsmooth>0.05</car_loadsmooth>
 <car_loadscale>6</car_loadscale>
-<volume_db>-6.9</volume_db>
+<volume_db>-9.25</volume_db>
 <pitch>0.070833332836627960205</pitch>
 <pitch_units>Octaves</pitch_units>
 <pitch_randomization>0.11666665226221084595</pitch_randomization>
@@ -6450,7 +6450,7 @@
 <car_rpmsmooth>0.075</car_rpmsmooth>
 <car_loadsmooth>0.05</car_loadsmooth>
 <car_loadscale>6</car_loadscale>
-<volume_db>-6.9</volume_db>
+<volume_db>-9.05</volume_db>
 <pitch>0.070833332836627960205</pitch>
 <pitch_units>Octaves</pitch_units>
 <pitch_randomization>0.11666665226221084595</pitch_randomization>
@@ -6639,7 +6639,7 @@
 <car_rpmsmooth>0.075</car_rpmsmooth>
 <car_loadsmooth>0.05</car_loadsmooth>
 <car_loadscale>6</car_loadscale>
-<volume_db>0</volume_db>
+<volume_db>-6.1</volume_db>
 <pitch>0.070833332836627960205</pitch>
 <pitch_units>Octaves</pitch_units>
 <pitch_randomization>0.11666665226221084595</pitch_randomization>
@@ -6828,7 +6828,7 @@
 <car_rpmsmooth>0.075</car_rpmsmooth>
 <car_loadsmooth>0.05</car_loadsmooth>
 <car_loadscale>6</car_loadscale>
-<volume_db>0</volume_db>
+<volume_db>-6.05</volume_db>
 <pitch>0.070833332836627960205</pitch>
 <pitch_units>Octaves</pitch_units>
 <pitch_randomization>0.11666665226221084595</pitch_randomization>
@@ -7017,7 +7017,7 @@
 <car_rpmsmooth>0.075</car_rpmsmooth>
 <car_loadsmooth>0.05</car_loadsmooth>
 <car_loadscale>6</car_loadscale>
-<volume_db>-5.85</volume_db>
+<volume_db>-10.4</volume_db>
 <pitch>0.070833332836627960205</pitch>
 <pitch_units>Octaves</pitch_units>
 <pitch_randomization>0.11666665226221084595</pitch_randomization>
@@ -7206,7 +7206,7 @@
 <car_rpmsmooth>0.075</car_rpmsmooth>
 <car_loadsmooth>0.05</car_loadsmooth>
 <car_loadscale>6</car_loadscale>
-<volume_db>-5.85</volume_db>
+<volume_db>-10.4</volume_db>
 <pitch>0.070833332836627960205</pitch>
 <pitch_units>Octaves</pitch_units>
 <pitch_randomization>0.11666665226221084595</pitch_randomization>

@@ -27,8 +27,6 @@ if kLocales then
     kLocales["REQUEST_JESTER"] = "崩溃"
     kLocales["REQUEST_WU"] = "芜?"
     kLocales["REQUEST_AH"] = "啊?"
-    kLocales["REQUEST_SLAP"] = "尻击"
-    kLocales["REQUEST_ANIKI"] = "本格"
 
     kLocales["MUTE_REQUEST_CUSTOM"] = "太吵请点我"
     kLocales["UNMUTE_REQUEST_CUSTOM"] = "太安静请点我"
