@@ -14,12 +14,8 @@ debug.appendtoenum(kVoiceId, 'XuanRea')
 debug.appendtoenum(kVoiceId, 'XuanAha')
 debug.appendtoenum(kVoiceId, 'XuanStory')
 debug.appendtoenum(kVoiceId, 'Liberity')
-debug.appendtoenum(kVoiceId, 'DuiDuiDui')
 debug.appendtoenum(kVoiceId, 'CZHL')
-debug.appendtoenum(kVoiceId, 'Summer')
-debug.appendtoenum(kVoiceId, 'Hitme')
 debug.appendtoenum(kVoiceId, 'LockerRoom')
-debug.appendtoenum(kVoiceId, 'Willings')
 debug.appendtoenum(kVoiceId, 'Scream')
 debug.appendtoenum(kVoiceId, 'ScreamLong')
 debug.appendtoenum(kVoiceId, 'Jester')
@@ -27,11 +23,11 @@ debug.appendtoenum(kVoiceId, 'Wu')
 debug.appendtoenum(kVoiceId, 'Ah')
 debug.appendtoenum(kVoiceId, 'Slap')
 debug.appendtoenum(kVoiceId, 'AnikiSpeak')
-debug.appendtoenum(kVoiceId, 'djdl')
 debug.appendtoenum(kVoiceId, 'Pyro')
 debug.appendtoenum(kVoiceId, 'PyroLaugh')
 debug.appendtoenum(kVoiceId, 'Aatrox')
 debug.appendtoenum(kVoiceId, 'AatroxLaugh')
+debug.appendtoenum(kVoiceId, 'Hajmi')
 
 local kAdditionalSoundData = {
     [kVoiceId.Disease] = { Sound = "sound/CNTaunts.fev/ma/Laugh", Description = "REQUEST_DISEASE", Interval = 2, AlertTechId = kTechId.None },
@@ -50,26 +46,20 @@ local kAdditionalSoundData = {
     [kVoiceId.XuanAha] = { Sound = "sound/CNTaunts.fev/Xuan/Aha", Description = "REQUEST_XUAN_AHA", Interval = 1.5, AlertTechId = kTechId.None },
     [kVoiceId.XuanStory] = { Sound = "sound/CNTaunts.fev/Xuan/Story", Description = "REQUEST_XUAN_STORY", Interval = 73, AlertTechId = kTechId.None },
     [kVoiceId.Liberity] = { Sound = "sound/CNTaunts.fev/CUSTOM/Liberity", Description = "REQUEST_LIBERITY", Interval = 11, AlertTechId = kTechId.None },
-    [kVoiceId.DuiDuiDui] = { Sound = "sound/CNTaunts.fev/CUSTOM/DuiDuiDui", Description = "REQUEST_DUIDUIDUI", Interval = 31, AlertTechId = kTechId.None },
-    [kVoiceId.Hitme] = { Sound = "sound/CNTaunts.fev/CUSTOM/Hitme", Description = "REQUEST_HITME", Interval = 8, AlertTechId = kTechId.None },
     [kVoiceId.CZHL] = { Sound = "sound/CNTaunts.fev/CUSTOM/CZHL", Description = "REQUEST_CZHL", Interval = 14, AlertTechId = kTechId.None },
-    [kVoiceId.Summer] = { Sound = "sound/CNTaunts.fev/CUSTOM/Summer", Description = "REQUEST_SUMMER", Interval = 46, AlertTechId = kTechId.None },
-    [kVoiceId.Willings] = { Sound = "sound/CNTaunts.fev/CUSTOM/Willings", Description = "REQUEST_WILLINGS", Interval = 41, AlertTechId = kTechId.None },
     [kVoiceId.Scream] = { Sound = "sound/CNTaunts.fev/CUSTOM/Scream", Description = "REQUEST_SCREAM", Interval = 0.5, AlertTechId = kTechId.None },
     [kVoiceId.ScreamLong] = { Sound = "sound/CNTaunts.fev/CUSTOM/ScreamLong", Description = "REQUEST_SCREAMLONG", Interval = 1, AlertTechId = kTechId.None },
     [kVoiceId.Jester] = { Sound = "sound/CNTaunts.fev/CUSTOM/Jester", Description = "REQUEST_JESTER", Interval = 2.5, AlertTechId = kTechId.None },
-    [kVoiceId.djdl] = { Sound = "sound/CNTaunts.fev/CUSTOM/djdl", Description = "REQUEST_DJDL", Interval = 20, AlertTechId = kTechId.None },
-
     [kVoiceId.LockerRoom] = { Sound = "sound/CNTaunts.fev/Aniki/Wrestle", Description = "REQUEST_LOCKERROOM", Interval = 50, AlertTechId = kTechId.None },
     [kVoiceId.Ah] = { Sound = "sound/CNTaunts.fev/Aniki/ah", Description = "REQUEST_AH", Interval = 0.75, AlertTechId = kTechId.None },
     [kVoiceId.Wu] = { Sound = "sound/CNTaunts.fev/Aniki/wu", Description = "REQUEST_WU", Interval = 0.75, AlertTechId = kTechId.None },
     [kVoiceId.Slap] = { Sound = "sound/CNTaunts.fev/Aniki/slap", Description = "尻击", Interval = 0.35, AlertTechId = kTechId.None },
     [kVoiceId.AnikiSpeak] = { Sound = "sound/CNTaunts.fev/Aniki/speak", Description = "本格", Interval = 2, AlertTechId = kTechId.None },
-
     [kVoiceId.Pyro] = { Sound = "sound/CNTaunts.fev/CUSTOM/Pyro", Description = "Pyro", Interval = 2, AlertTechId = kTechId.None },
     [kVoiceId.PyroLaugh] = { Sound = "sound/CNTaunts.fev/CUSTOM/PyroLaugh", Description = "Pyro [2]", Interval = 1.25, AlertTechId = kTechId.None },
     [kVoiceId.Aatrox] = { Sound = "sound/CNTaunts.fev/CUSTOM/Aatrox", Description = "亚托克斯", Interval = 2, AlertTechId = kTechId.None },
     [kVoiceId.AatroxLaugh] = { Sound = "sound/CNTaunts.fev/CUSTOM/AatroxLaugh", Description = "亚托克斯 [2]", Interval = 1.25, AlertTechId = kTechId.None },
+    [kVoiceId.Hajmi] = { Sound = "sound/CNTaunts.fev/CUSTOM/Hajmi", Description = "哈吉米", Interval = 16, AlertTechId = kTechId.None },
 }
 
 for _, data in pairs(kAdditionalSoundData) do
@@ -82,7 +72,7 @@ end
 
 local kSpectatorMenu = {
     [LEFT_MENU] = { kVoiceId.Disease, kVoiceId.Aatrox, kVoiceId.AatroxLaugh, kVoiceId.ScreamLong, kVoiceId.Pyro, kVoiceId.PyroLaugh },
-    [RIGHT_MENU] = { kVoiceId.djdl, kVoiceId.LockerRoom, kVoiceId.XuanStory, kVoiceId.OttoStory, kVoiceId.Liberity, kVoiceId.Willings }
+    [RIGHT_MENU] = { kVoiceId.CZHL, kVoiceId.LockerRoom, kVoiceId.XuanStory, kVoiceId.OttoStory, kVoiceId.Liberity, kVoiceId.Hajmi }
 }
 
 function GetRequestMenuTeam(side, className, teamType)

@@ -224,8 +224,13 @@ local function OnConcedeButtonClicked()
 
 end
 
-local function SendRequest(voiceId)
+local function SendRequest(voiceId,itemId)
 
+    if itemId and not GetOwnsItem(itemId) then
+        Shared.Message(string.format("[%s|%s]item unAccessible",EnumToString(kVoiceId,voiceId),itemId))
+        return
+    end
+    
     if GetCanSendRequest(voiceId) and not MainMenu_GetIsOpened() then
         Client.SendNetworkMessage("VoiceMessage", BuildVoiceMessage(voiceId), true)
         local sendInterval = kDefaultSendInterval
@@ -794,29 +799,30 @@ end)
 Event.Hook("Console_scream", function()
     SendRequest(kVoiceId.Scream)
 end)
+
+--?
 Event.Hook("Console_screamlong", function()
-    SendRequest(kVoiceId.ScreamLong)
+    SendRequest(kVoiceId.ScreamLong,kScreamLongItemId)
 end)
 Event.Hook("Console_jester", function()
-    SendRequest(kVoiceId.Jester)
+    SendRequest(kVoiceId.Jester,kJesterItemId)
 end)
-Event.Hook("Console_djdl", function()
-    SendRequest(kVoiceId.djdl)
-end)
+
 Event.Hook("Console_aatrox", function()
-    SendRequest(kVoiceId.Aatrox)
+    SendRequest(kVoiceId.Aatrox,kAatroxItemId)
 end)
 
 Event.Hook("Console_aatrox2", function()
-    SendRequest(kVoiceId.AatroxLaugh)
+    SendRequest(kVoiceId.AatroxLaugh,kAatroxLaughItemId)
 end)
 Event.Hook("Console_pyro", function()
-    SendRequest(kVoiceId.Pyro)
+    SendRequest(kVoiceId.Pyro,kPyroItemId)
 end)
 
 Event.Hook("Console_pyro2", function()
-    SendRequest(kVoiceId.PyroLaugh)
+    SendRequest(kVoiceId.PyroLaugh,kPyroLaughItemId)
 end)
+
 Event.Hook("Console_randomdisease", function()
     SendRequest(math.random(kVoiceId.Disease, kVoiceId.AnikiSpeak))
 end)
