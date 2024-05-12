@@ -801,6 +801,14 @@ Event.Hook("Console_scream", function()
 end)
 
 --?
+Event.Hook("Console_pyro", function()
+    SendRequest(kVoiceId.Pyro)
+end)
+
+Event.Hook("Console_pyro2", function()
+    SendRequest(kVoiceId.PyroLaugh)
+end)
+
 Event.Hook("Console_screamlong", function()
     SendRequest(kVoiceId.ScreamLong,kScreamLongItemId)
 end)
@@ -815,14 +823,6 @@ end)
 Event.Hook("Console_aatrox2", function()
     SendRequest(kVoiceId.AatroxLaugh,kAatroxLaughItemId)
 end)
-Event.Hook("Console_pyro", function()
-    SendRequest(kVoiceId.Pyro,kPyroItemId)
-end)
-
-Event.Hook("Console_pyro2", function()
-    SendRequest(kVoiceId.PyroLaugh,kPyroLaughItemId)
-end)
-
 Event.Hook("Console_randomdisease", function()
     SendRequest(math.random(kVoiceId.Disease, kVoiceId.AnikiSpeak))
 end)
